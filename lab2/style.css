@@ -1,0 +1,28 @@
+.multi {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.first{
+    width: 100px;
+    height: 50px;
+    border: 1px solid green;
+    background-color: green;
+   
+}
+.red {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+.blue {
+    width: 50px;
+    height: 50px;
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 0px 10px 0px 10px;
+}
