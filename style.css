@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+.box {
+    border: 1px solid black;
+    background-color: blueviolet;
+    padding: 10px;
+}
