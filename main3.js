@@ -33,8 +33,8 @@ id.innerHTML = `width = ${itemObj.width}px`
 const height = document.createElement('div')
 id.innerHTML = `heiht = ${itemObj.height}px` */
 
-boxEl.appendChild(width)
-boxEl.appendChild(height)
+/*boxEl.appendChild(width)
+boxEl.appendChild(height)*/
 
 return boxEl
 }
@@ -42,7 +42,7 @@ return boxEl
 
 for (let i = 0; i < items.length; i++) {
     const currentUserObj = items[i]
-    const currentUserHTML = objToHtml(cuurentUserObj);
+    const currentUserHTML = objToHtml(currentUserObj);
 
     root.appendChild(currentUserHTML)
 }
