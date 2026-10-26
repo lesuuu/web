@@ -1,10 +1,90 @@
-.wrapper {
-    display: flex;
-    gap: 40px;
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
 }
-.box {
-    border: 1px solid black;
-    background-color: blueviolet;
+
+.app {
+    display: grid;
+    grid-template-columns: 50px 300px auto;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    transition: grid-template-columns 0.3s ease-in-out;
+}
+.app_navbar-hidden {
+    grid-template-columns: 50px 0px auto;
+}
+
+.sidebar {
+    background: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.sidebar__icon {
+    width: 30px;
+    height: 30px;
+    background: #000;
+}
+
+.navbar {
+    background: gainsboro;
+    display: grid;
+    grid-template-rows: 70px calc(100vh - 70px);
+    overflow: hidden;
+
+}
+.novbar__controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 10px;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #b8b5b5;
+    border-right: 1px solid #b8b5b5;
+}
+.novbar__controls_input {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+}
+.novbar__controls_input:focus-visible {
+    outline: none;
+}
+.navbar__scroll {
+    overflow-y: auto;
+}
+
+.navbar__month_title {
+    padding: 10px 20px;
+    background: #b8b8b8;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.navbar__month_note {
+    background: rgb(207, 203, 203);
+    border-bottom: 1px solid #999797;
+    border-right: 1px solid #999797;
+    display: grid;
+    grid-template-columns: 130px auto;
+    border-left: 5px solid rgb(207, 203, 203);
+}
+.navbar__month_note_active {
+    background: white;
+    border-left: 5px solid rgb(177, 2, 177);
+}
+
+
+.navbar__month_note:hover {
+    cursor: pointer;
+    border-left: 5px solid rgb(177, 2, 177);
+}
+.navbar__month_note-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #999797;
 }
