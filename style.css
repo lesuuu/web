@@ -26,6 +26,7 @@
     width: 30px;
     height: 30px;
     background: #000;
+    cursor: pointer;
 }
 
 .navbar {
@@ -38,16 +39,20 @@
 .novbar__controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 10px;
+    padding: 0 12px;
+    font-size: 14px;
     gap: 10px;
     align-items: center;
+    white-space: nowrap;
     border-bottom: 1px solid #b8b5b5;
     border-right: 1px solid #b8b5b5;
+    height: 50px;
 }
 .novbar__controls_input {
-    width: 100px;
-    height: 30px;
-    padding: 5px;
+    border: 1px solid #bbb;
+    padding: 6px 8px;
+    border-radius: 6px;
+    min-width: 0;
 }
 .novbar__controls_input:focus-visible {
     outline: none;
@@ -63,28 +68,93 @@
     font-weight: bold;
 }
 
-.navbar__month_note {
+.navbar__month-note {
     background: rgb(207, 203, 203);
     border-bottom: 1px solid #999797;
     border-right: 1px solid #999797;
     display: grid;
-    grid-template-columns: 130px auto;
+    grid-template-columns: 130px 1fr;
     border-left: 5px solid rgb(207, 203, 203);
-}
-.navbar__month_note_active {
-    background: white;
-    border-left: 5px solid rgb(177, 2, 177);
-}
-
-
-.navbar__month_note:hover {
     cursor: pointer;
-    border-left: 5px solid rgb(177, 2, 177);
 }
-.navbar__month_note-date {
+.navbar__month-note_active {
+    background: white;
+    border-left: 6px solid purple;
+}
+
+.navbar__month-note:hover {
+    border-left: 6px solid purple;
+}
+.navbar__month-note-date {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border-right: 1px solid #999797;
+    justify-content: center;
+    padding: 8px 2px;
+    border-right: 1px solid #c4c4c4;
+}
+
+.navbar__month-note-num {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.navbar__month-note-day {
+    font-size: 11px;
+    color: #444;
+}
+
+.navbar__month-note-day:last-child {
+    font-size: 9px;
+    margin-top: 2px;
+    color: #666;
+}
+
+.navbar__month-note-description {
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.35;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+.editor {
+    display: grid;
+    grid-template-rows: 44px 1fr;
+    background: white;
+    overflow: hidden;
+}
+
+.editor__toolbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    height: 50px;
+}
+
+.editor__page {
+    padding: 40px 60px;
+    max-width: 760px;
+    overflow-y: auto;
+}
+
+.editor__date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.editor__title {
+    font-size: 32px;
+    color: #3d2b4f;
+    margin-bottom: 20px;
+}
+
+.editor__text {
+    font-size: 16px;
+    line-height: 1.6;
 }

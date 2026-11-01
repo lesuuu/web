@@ -17,22 +17,22 @@ const days = [
 const notes = [
     {
     title:'Список покупок',
-    discription:'Помидоры,лук,кетчуп,попугай,ириски',
+    description:'Помидоры,лук,кетчуп,попугай,ириски',
     date: '2026-10-24'
     },
     {
     title:'Подарки на новый год',
-    discription:'Never gonna give you up Never gonna let you down',
+    description:'Never gonna give you up Never gonna let you down',
     date: '2025-12-20'
     },
     {
     title:'Домофон подруг',
-    discription:'33,18,76',
+    description:'33,18,76',
     date: '2024-11-04'
     },
     {
     title:'Анапа 2009',
-    discription:'было классно и жарко, мы все обгорели',
+    description:'было классно и жарко, мы все обгорели',
     date: '2009-06-18'
     }
 ]
@@ -42,16 +42,18 @@ function getNoteHTML(note) {
     const rootElement = document.createElement('div')
     rootElement.classList.add('navbar__month-note')
 
+    const dateObj =new Date(note.date)
+
     const dateElement = document.createElement('div')
     dateElement.classList.add('navbar__month-note-date')
 
     const num = document.createElement('div')
     num.classList.add('navbar__month-note-num')
-    num.innerHTML = new Date(note.date).getDate()
+    num.innerHTML = dateObj.getDate()
 
     const day = document.createElement('div')
     day.classList.add('navbar__month-note-day')
-    day.innerHTML = days[new Date(note.date).getDay()-1]
+    day.innerHTML = days[dateObj.getDay()]
 
     const fullDate = document.createElement('div')
     fullDate.classList.add('navbar__month-note-day')
@@ -82,6 +84,12 @@ function getNoteHTML(note) {
 
 const navbarElement = document.getElementById('navbar')
 
+function renderEditor() {
+    document.getElementById('editor-date').innerHTML = currentNote.date
+    document.getElementById('editor-title').innerHTML = currentNote.title
+    document.getElementById('editor-text').innerHTML = currentNote.description
+}
+
 function renderNavbar() {
     navbarElement.innerHTML = ''
     for (let note of notes) {
@@ -92,9 +100,11 @@ function renderNavbar() {
         noteHTML.addEventListener('click', () => {
             currentNote = note
             renderNavbar()
+            console.log(currentNote);
         })
         navbarElement.appendChild(noteHTML)
     }
+    renderEditor()
 }
 
 renderNavbar()
