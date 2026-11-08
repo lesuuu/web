@@ -36,9 +36,9 @@
     overflow: hidden;
 
 }
-.novbar__controls {
+.navbar__controls {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr auto;
     padding: 0 12px;
     font-size: 14px;
     gap: 10px;
@@ -46,15 +46,15 @@
     white-space: nowrap;
     border-bottom: 1px solid #b8b5b5;
     border-right: 1px solid #b8b5b5;
-    height: 50px;
+    height: 70px;
 }
-.novbar__controls_input {
+.navbar__controls_input {
     border: 1px solid #bbb;
     padding: 6px 8px;
     border-radius: 6px;
     min-width: 0;
 }
-.novbar__controls_input:focus-visible {
+.navbar__controls_input:focus-visible {
     outline: none;
 }
 .navbar__scroll {
@@ -131,30 +131,48 @@
 
 .editor {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 70px 40px 1fr;
     background: white;
     overflow: hidden;
 }
 
-.editor__tools {
+.editor__navbar {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
+    padding: 0 20px;
     border-bottom: 1px solid #ddd;
-    font-size: 14px;
-    height: 50px;
+}
+.editor__navbar-group {
+    display: flex;
+    gap: 8px;
+}
+
+.editor__navbar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #747272;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.editor__navbar-btn:hover {
+    background: purple;
+    color: #000;
 }
 
 .editor__tools {
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 0 20px;
     border-bottom: 1px solid #ddd;
 }
+
 
 .editor__tools button {
     padding: 5px 10px;

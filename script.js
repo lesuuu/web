@@ -169,13 +169,23 @@ function getNoteHTML(note) {
 const navbarElement = document.getElementById('navbar')
 
 function renderEditor() {
-    document.getElementById('editor-date').innerHTML = currentNote.date
-    document.getElementById('editor-title').innerHTML = currentNote.title
-    document.getElementById('editor-text').innerHTML = currentNote.description
+    editor.commands.setContent(`<h1>${currentNote.title}</h1><p>${currentNote.description}</p>`)
 }
 
-function renderEditor() {
-    editor.commands.setContent(`<h1>${currentNote.title}</h1><p>${currentNote.description}</p>`)
+function renderNavbar() {
+    navbarElement.innerHTML = ''
+    for (let note of notes) {
+        const noteHTML = getNoteHTML(note)
+        if (note === currentNote) {
+            noteHTML.classList.add('navbar__month-note_active')
+        }
+        noteHTML.addEventListener('click', () => {
+            currentNote = note
+            renderNavbar()
+        })
+        navbarElement.appendChild(noteHTML)
+    }
+    renderEditor()
 }
 
 renderNavbar()

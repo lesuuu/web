@@ -12,37 +12,25 @@
             <div class="sidebar__icon" id="hide"></div>
             <div class="sidebar__icon"></div>
         </section>
-        <section class="novbar">
-            <div class="novbar__controls">
+        <section class="navbar">
+            <div class="navbar__controls">
                 <div>Сортировка</div>
-                <input class="novbar__controls_input" type="text" placeholder="Поиск заметок" >
+                <input class="navbar__controls_input" type="text" placeholder="Поиск заметок" >
+                <button class="navbar__create" id="create-btn">+</button>
             </div>
             <div class="navbar__scroll">
-                <div class="navbar__month" id="navbar">
-
-                    <!--
-                    <div class="navbar__month_title">
-                        Июнь 2018
-                    </div>
-                    <div class="navbar__month-note">
-                        <div class="navbar__month-note-date">
-                            <div class="navbar__month-note-num">18</div>
-                            <div class="navbar__month-note-day">Monday</div>
-                        </div>
-                        <div class="navbar__month_note-description">
-                            <div><b>Планирование бюджета</b></div>
-                            <div>Я сеговдня вкусно поел...
-                        </div>
-
-                        </div>
-                    </div>
-                -->
-
-                </div>
+                <div class="navbar__month" id="navbar"></div>
             </div>
         </section>
 
         <section class="editor">
+            <div class="editor__navbar">
+                <div class="editor__navbar-group">
+                    <button class="editor__navbar-btn">left</button>
+                    <button class="editor__navbar-btn">right</button>
+                </div>
+            </div>
+
              <div class="editor__tools">
                 <button data-tiptap-button="bold">Bold</button>
                 <button data-tiptap-button="italic">Italic</button>
